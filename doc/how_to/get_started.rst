@@ -104,7 +104,7 @@ and the raster plots.
 
 .. code:: ipython3
 
-    w_ts = sw.plot_traces(recording, time_range=(0, 5))
+    w_ts = sw.plot_timeseries(recording, time_range=(0, 5))
     w_rs = sw.plot_rasters(sorting_true, time_range=(0, 5))
 
 
@@ -203,9 +203,9 @@ object to disk.
 .. code:: ipython3
 
     recording_cmr = recording
-    recording_f = si.bandpass_filter(recording, freq_min=300, freq_max=6000)
+    recording_f = spre.bandpass_filter(recording, freq_min=300, freq_max=6000)
     print(recording_f)
-    recording_cmr = si.common_reference(recording_f, reference='global', operator='median')
+    recording_cmr = spre.common_reference(recording_f, reference='global', operator='median')
     print(recording_cmr)
 
     # this computes and saves the recording after applying the preprocessing chain
